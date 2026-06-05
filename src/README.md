@@ -2,7 +2,7 @@
 
 <p>> What skills do i have?</p>
 <ul>
-    <li>[🌐] Web Development</li>
+    <li>[🌐] Website Development</li>
     <li>[🤖] Discord Bot Development</li>
     <li>[💻] Minecraft Server Development</li>
 </ul>
