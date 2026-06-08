@@ -1,12 +1,9 @@
 name: Generate Profile README.md
 
 on:
-    # Schedule the workflow to run daily at midnight UTC
     schedule:
         - cron: "0 0 * * *"
-    # Allow manual triggering of the workflow
     workflow_dispatch:
-    # Trigger the workflow on pushes to the main branch
     push:
         branches:
             - main
@@ -16,20 +13,14 @@ jobs:
         runs-on: ubuntu-latest
         timeout-minutes: 5
         steps:
-            # Step 1: Checkout the repository
             - name: Checkout Repository
               uses: actions/checkout@v3
 
-            # Step 2: Fetch profile data and generate README in 'profile' directory
             - name: Generate README from Template
               run: |
-                  # Fetch the display name from GitHub API (fallback to login if name is null)
                   USER_NAME=$(curl -s https://api.github.com/users/${{ github.repository_owner }} | jq -r '.name // .login')
-
-                  # Ensure the 'profile' directory exists
                   mkdir -p profile
 
-                  # Replace [name] placeholder in template and output to profile/README.md
                   TEMPLATE_PATH="src/README.md"
                   OUTPUT_PATH="profile/README.md"
 
@@ -41,16 +32,11 @@ jobs:
                     exit 1
                   fi
 
-            # Step 3: Commit and push the generated file
             - name: Commit and Push Changes
               run: |
                   git config --global user.name "github-actions[bot]"
                   git config --global user.email "github-actions[bot]@users.noreply.github.com"
-
-                  # Add only the file in the profile directory
                   git add profile/README.md
-
-                  # Commit only if there are changes
                   git commit -m "docs: update profile/README.md with current name [skip ci]" || exit 0
                   git push
               env:
