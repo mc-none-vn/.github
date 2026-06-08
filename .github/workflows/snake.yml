@@ -32,10 +32,11 @@ jobs:
 
             - name: Move files to src/snake/
               run: |
-                  mkdir -p src/snake
-                  mv dist/snake.svg src/snake/
-                  mv dist/snake-dark.svg src/snake/
-                  mv dist/ocean.gif src/snake/
+                  sudo mkdir -p src/snake
+                  sudo mv dist/snake.svg src/snake/
+                  sudo mv dist/snake-dark.svg src/snake/
+                  sudo mv dist/ocean.gif src/snake/
+                  sudo chmod -R 755 src/snake
 
             - name: Commit and Push to Main Branch
               uses: stefanzweifel/git-auto-commit-action@v5
