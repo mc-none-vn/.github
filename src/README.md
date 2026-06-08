@@ -35,9 +35,9 @@
 ---
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/mc-none-vn/.github/refs/heads/output//snake-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/mc-none-vn/.github/refs/heads/output/snake.svg" />
-  <img align="center" width="100%" src="https://raw.githubusercontent.com/mc-none-vn/.github/refs/heads/output/snake.svg" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/mc-none-vn/.github/refs/heads/main/src/snake/snake-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/mc-none-vn/.github/refs/heads/main/src/snake/snake.svg" />
+  <img align="center" width="100%" src="https://raw.githubusercontent.com/mc-none-vn/.github/refs/heads/main/src/snake/snake.svg" />
 </picture>
 
 ---
