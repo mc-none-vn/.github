@@ -21,9 +21,9 @@ jobs:
               with:
                   github_user_name: ${{ github.repository_owner }}
                   outputs: |
-                      dist/snake.svg
-                      dist/snake-dark.svg?palette=github-dark
-                      dist/ocean.gif?color_snake=orange&color_dots=#bfd6f6,#8dbdff,#64a1f4,#4b91f1,#3c7dd9
+                      dist/src/snake/snake.svg
+                      dist/src/snake/snake-dark.svg?palette=github-dark
+                      dist/src/snake/ocean.gif?color_snake=orange&color_dots=#bfd6f6,#8dbdff,#64a1f4,#4b91f1,#3c7dd9
               env:
                   GITHUB_TOKEN: ${{ secrets.TOKEN }}
 
@@ -32,5 +32,5 @@ jobs:
               with:
                   github_token: ${{ secrets.TOKEN }}
                   publish_dir: ./dist
-                  publish_branch: output
+                  publish_branch: main
                   commit_message: "Update snake animation [skip ci]"
