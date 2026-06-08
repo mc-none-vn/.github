@@ -14,23 +14,29 @@ jobs:
         timeout-minutes: 10
         steps:
             - name: Checkout Repository
-              uses: actions/checkout@v3
+              uses: actions/checkout@v4
 
             - name: Generate GitHub Contributions Snake Animations
               uses: Platane/snk@v3
               with:
                   github_user_name: ${{ github.repository_owner }}
                   outputs: |
-                      dist/src/snake/snake.svg
-                      dist/src/snake/snake-dark.svg?palette=github-dark
-                      dist/src/snake/ocean.gif?color_snake=orange&color_dots=#bfd6f6,#8dbdff,#64a1f4,#4b91f1,#3c7dd9
+                      dist/snake.svg
+                      dist/snake-dark.svg?palette=github-dark
+                      dist/ocean.gif?color_snake=orange&color_dots=#bfd6f6,#8dbdff,#64a1f4,#4b91f1,#3c7dd9
               env:
                   GITHUB_TOKEN: ${{ secrets.TOKEN }}
 
-            - name: Deploy to Output Branch
-              uses: peaceiris/actions-gh-pages@v3
+            - name: Move files to src/snake/
+              run: |
+                  mkdir -p src/snake
+                  mv dist/snake.svg src/snake/
+                  mv dist/snake-dark.svg src/snake/
+                  mv dist/ocean.gif src/snake/
+
+            - name: Commit and Push to Main Branch
+              uses: stefanzweifel/git-auto-commit-action@v5
               with:
-                  github_token: ${{ secrets.TOKEN }}
-                  publish_dir: ./dist
-                  publish_branch: main
+                  branch: main
+                  file_pattern: 'src/snake/*'
                   commit_message: "Update snake animation [skip ci]"
