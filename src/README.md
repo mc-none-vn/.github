@@ -47,5 +47,5 @@
     &nbsp;
     <a href="https://youtube.com/@mc.vn.404" target="blank"> <img src="https://img.shields.io/badge/-YouTube-darkred?style=for-the-badge&logo=youtube" alt="YouTube" height="50" /></a>
     &nbsp;
-    <a href="https://discord.gg/kVFUBmhFEZ" target="blank"> <img src="https://img.shields.io/badge/-Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" height="50" /></a>
+    <a href="https://dsc.mcteam.io.vn" target="blank"> <img src="https://img.shields.io/badge/-Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" height="50" /></a>
 </p>
