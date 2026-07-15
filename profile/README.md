@@ -1,4 +1,4 @@
-<h2 align="center">👋 Hi, I'm null! Nice to meet you! </h2>
+<h2 align="center">👋 Hi, I'm Marlernix Mc! Nice to meet you! </h2>
 
 <p>> What skills do i have?</p>
 <ul>
